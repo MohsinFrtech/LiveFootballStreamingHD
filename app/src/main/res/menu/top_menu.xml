@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/live"
+        android:title="Currently live matches" />
+
+    <item
+        android:id="@+id/within_few_minutes"
+        android:title="Within 30 minutes" />
+
+    <item
+        android:id="@+id/more_than_an_hour"
+        android:title="Within one hour" />
+</menu>

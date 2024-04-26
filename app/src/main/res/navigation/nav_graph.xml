@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/event"
+    android:id="@+id/nav_graph">
+
+
+
+    <fragment
+        android:id="@+id/event"
+        android:name="com.depvt.live.football.tv.ui.app.fragments.EventFragment"
+        android:label="Event Fragment"
+        tools:layout="@layout/home_fragment">
+
+        <action
+            android:id="@+id/action_event_to_channel"
+            app:destination="@id/channel" />
+        <action
+            android:id="@+id/action_event_to_player"
+            app:destination="@id/player" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.depvt.live.football.tv.ui.app.fragments.CategoryFragment"
+        android:label="Category Fragment"
+        tools:layout="@layout/categories_fragment">
+
+
+        <action
+            android:id="@+id/action_categoriesFragment_to_player"
+            app:destination="@id/player" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.depvt.live.football.tv.ui.app.fragments.MoreFragment"
+        android:label="More Fragment"
+        tools:layout="@layout/activity_splash">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/channel"
+        android:name="com.depvt.live.football.tv.ui.app.fragments.ChannelFragment"
+        android:label="channel Fragment"
+        tools:layout="@layout/fragment_channels">
+
+
+        <argument
+            android:name="getEvent"
+            app:argType="com.depvt.live.football.tv.models.Event"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_channel_to_player"
+            app:destination="@id/player" />
+        <argument
+            android:name="getCategory"
+            app:argType="com.depvt.live.football.tv.models.Category"
+            app:nullable="true" />
+        <argument
+            android:name="channelList"
+            app:argType="com.depvt.live.football.tv.models.Channel[]"
+            app:nullable="true" />
+    </fragment>
+
+
+    <activity
+        android:id="@+id/player"
+        android:name="com.depvt.live.football.tv.ui.app.activities.PlayerScreen"
+        tools:layout="@layout/activity_exo_test_player"
+        android:label="player Fragment">
+
+        <argument
+            android:name="baseURL"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="abc" />
+        <argument
+            android:name="linkAppend"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="abc" />
+        <argument
+            android:name="channleType"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="abc" />
+    </activity>
+    <fragment
+        android:id="@+id/notification"
+        tools:layout="@layout/notifications_layout"
+        android:label="Notification Fragment"
+        android:name="com.depvt.live.football.tv.ui.app.fragments.NotificationFragment">
+
+    </fragment>
+</navigation>

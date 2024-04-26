@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="dataChannel"
+            type="com.depvt.live.football.tv.models.Channel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/mainCardEvent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/_15sdp"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/mainCardEvent2"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        imageEvent="@{dataChannel.image_url}"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/event_txt"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/placeholder">
+
+                    </ImageView>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/channelName"
+                    android:layout_width="0sp"
+                    android:maxLines="2"
+                    android:layout_height="0sp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    app:layout_constraintBottom_toTopOf="@+id/dateAndTime"
+                    android:layout_marginEnd="@dimen/_15sdp"
+                    android:text="@{dataChannel.name}"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/_12sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/mainCardEvent2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/dateAndTime"
+                    android:layout_width="0sp"
+                    android:gravity="bottom"
+                    app:layout_constraintTop_toBottomOf="@+id/channelName"
+                    android:layout_height="0sp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text=""
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/_11sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/mainCardEvent2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+        <TextView
+            android:layout_width="0sp"
+            android:layout_height="0sp"
+            android:textSize="@dimen/_12sdp"
+            android:id="@+id/textVal"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_14sdp"
+            android:textColor="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@+id/mainCardEvent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_marginEnd="0sp"
+            android:id="@+id/playBtn"
+            android:contentDescription="@string/listDescription"
+            android:src="@drawable/play_btn"
+            app:layout_constraintEnd_toEndOf="@id/textVal"
+            app:layout_constraintBottom_toTopOf="@id/textVal"
+            android:elevation="@dimen/_10sdp"
+            android:layout_height="wrap_content">
+
+        </ImageView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</layout>

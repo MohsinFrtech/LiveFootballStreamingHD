@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.app.activities.MainActivity">
+
+
+    <data>
+        <variable
+            name="modelMain"
+            type="com.depvt.live.football.tv.viewModel.OneViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/mainBackground"
+        android:background="@android:color/transparent"
+        android:elevation="10dp"
+        android:layout_height="match_parent">
+
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:navGraph="@navigation/nav_graph"
+            app:layout_constraintBottom_toTopOf="@+id/adContainerLocation"
+            app:defaultNavHost="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar1"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_60sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="100dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:visibility="gone"
+            app:lottie_autoPlay="true"
+            android:id="@+id/lottie_home"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/home_loading" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/splashLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/splashHeading"
+                android:layout_width="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:fontFamily="@font/ff_din_bold"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/splashBody"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/splashHeading"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/splashHeading"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14sdp" />
+
+            <Button
+                android:id="@+id/splashButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginBottom="@dimen/_70sdp"
+                android:backgroundTint="@color/colorAccent"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_nav"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/adContainerLocation"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="wrap_content">
+            <com.startapp.sdk.ads.banner.Banner
+                android:id="@+id/startAppBanner"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                android:id="@+id/fbAdView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:gravity="center"
+                android:layout_height="50sp"
+                android:orientation="vertical"
+                />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible"
+                android:layout_height="wrap_content"
+                android:id="@+id/unityBannerView"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:id="@+id/adblock_layout"
+            android:visibility="gone"
+            android:clickable="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:focusable="true"
+            android:layout_height="match_parent"
+            android:background="#D49E8B8B">
+            <ImageView
+                android:id="@+id/image_main"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_260sdp"
+                android:src="@drawable/ic_ad_blocker"
+                android:contentDescription="@string/ad_Blocker" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_main"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center"
+                android:text="@string/adblock"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_nav"
+                android:background="@drawable/bottom_navigation_drawer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                app:itemBackground="@android:color/transparent"
+                android:layout_height="@dimen/_50sdp"
+                android:visibility="visible"
+                app:menu="@menu/menu_bottombar" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

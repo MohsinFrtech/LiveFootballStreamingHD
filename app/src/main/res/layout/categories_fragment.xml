@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.depvt.live.football.tv.viewModel.OneViewModel" />
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainBackground"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:onRefreshListener="@{()->model.onRefreshFixtures()}"
+        app:refreshing="@{model.isLoading}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:id="@+id/mainHomeLay"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/more_item_draw"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="@font/cooperhewitt_bold"
+                    android:id="@+id/appText"
+                    android:text="@string/app_name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_height="wrap_content"/>
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/bellIcon"
+                    app:layout_constraintTop_toTopOf="@+id/appText"
+                    app:layout_constraintBottom_toBottomOf="@+id/appText"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:src="@drawable/notification1"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/notifications"
+                    />
+
+
+                <LinearLayout
+                    android:id="@+id/search_bar_spec"
+                    android:layout_width="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/appText"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginBottom="@dimen/_15sdp"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/text_background"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:src="@drawable/ic_baseline_search_24"
+                        android:contentDescription="@string/searchIcon" />
+
+                    <EditText
+                        android:id="@+id/event_edittext"
+                        android:inputType="text"
+                        android:textColor="@android:color/black"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginEnd="10sp"
+                        android:background="@drawable/text_background"
+                        android:hint="@string/search_live_channels"
+                        android:maxLines="1"
+                        android:textSize="13sp"
+                        android:autofillHints="Search here" />
+
+
+                    <LinearLayout
+                        android:layout_width="0sp"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:backgroundTint="#005db2"
+                        android:background="@drawable/text_background2"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:src="@drawable/mic"
+                            android:layout_height="wrap_content">
+
+                        </ImageView>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:measureAllChildren="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mainHomeLay"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_height="0sp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:id="@+id/channelRecycler"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="0sp"
+                        android:layout_height="match_parent"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            </androidx.core.widget.NestedScrollView>
+
+
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/adView"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                app:layout_constraintRight_toRightOf="parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintLeft_toLeftOf="parent"-->
+<!--                app:adSize="BANNER"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:visibility="visible"/>-->
+
+            <LinearLayout
+                android:id="@+id/fbAdView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:gravity="center"
+                android:layout_height="50sp"
+                android:orientation="vertical"
+                />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible"
+                android:layout_height="wrap_content"
+                android:id="@+id/unityBannerView"/>
+
+            <com.startapp.sdk.ads.banner.Banner
+                android:id="@+id/startAppBanner"
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:id="@+id/noMatchText"
+                android:visibility="gone"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/noMatch"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+
+</layout>

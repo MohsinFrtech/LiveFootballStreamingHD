@@ -1,0 +1,100 @@
+<resources>
+    <string name="app_name">Live Football Streaming HD</string>
+    <string name="popular_games">Recommended</string>
+    <string name="media_route_menu_title">Play on&#8230;</string>
+    <string name="games">Games</string>
+    <string name="noLive2">No Recommended channel available to show.</string>
+    <string name="popular_channels">Popular Events</string>
+    <string name="noGame">No Popular Event available to show</string>
+    <string name="appName">Live Football</string>
+
+    <string name="link"> Terms &amp; Condition </string>
+
+    <string name="my_string">Liv<span style="text-transform: uppercase;">e</span> Football.</string>
+
+    <string name="value">2.3.0</string>
+    <string name="notificationText">Currently no notification available</string>
+    <string name="clear">Clear All</string>
+    <string name="cpp_file_error">Something went wrong. please restart your phone to use the app</string>
+
+
+
+
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+    <string name="no_internet_string">Internet connection lost! , please check your internet connection.</string>
+    <string name="retry">Retry</string>
+    <string name="home">Home</string>
+
+    <string name="againVal">Something went wrong,Please retry.</string>
+    <string name="facebook_app_id"></string>
+
+    <string name="notifications">Notifications</string>
+    <string name="more">More</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="share">Share</string>
+    <string name="terms_condition">Privacy Policy</string>
+    <string name="yes">liveIcon</string>
+    <string name="playerLive">Live</string>
+    <string name="lockIcon">lockIcon</string>
+    <string name="pauseIcon">pauseIcon</string>
+    <string name="search_live_channels">Search here</string>
+    <string name="screenModeIcon">screenModeIcon</string>
+    <string name="playerStretch">Stretch</string>
+    <string name="volume">volume</string>
+    <string name="cast">Cast</string>
+    <string name="menuIcon">menuIcon</string>
+    <string name="searchIcon">searchIcon</string>
+    <string name="cancelIcon">cancelIcon</string>
+    <string name="gameImage">game</string>
+    <string name="live">Live</string>
+    <string name="noLive">No channel available to show.</string>
+    <string name="backIcon">backIcon</string>
+    <string name="navigate">navigate</string>
+    <string name="channelImage">channelImage</string>
+    <string name="version">New version available</string>
+    <string name="appUpdate">Please, update to new version to continue reposting.</string>
+    <string name="noThanks">No,Thanks</string>
+    <string name="Up">Update</string>
+    <string name="adblock">We detected ad blocker running on your device.Please disable adblocker and then use our app.</string>
+    <string name="Exit">Exit</string>
+    <string name="ad_Blocker">adBlocker</string>
+    <string name="usb_debugging">Please Disable \"USB Debugging\" from your phone to use the app.</string>
+    <string name="allow_text">Allow</string>
+
+
+    <!--    more Screen layout-->
+    <string name="app_rating">App Rating..</string>
+    <string name="rate">Rate</string>
+    <string name="notified">Get Notified!</string>
+    <string name="Allow">We will notify you about the latest game updates,upcoming matches,and live stars.</string>
+    <string name="skip">Yes,Notify me</string>
+    <string name="stringValue">Maybe Later</string>
+    <string name="noLiveEvent">No live event available to show.</string>
+    <string name="event_txt">Events</string>
+    <string name="categories_txt">Categories</string>
+    <string name="more_txt">More Options</string>
+    <string name="app_version">App Version</string>
+    <string name="get_support">Get Support</string>
+    <string name="writeReview">Write a Review</string>
+    <string name="share_app">Share App</string>
+    <string name="terms_of_use">Terms of Use</string>
+    <string name="Terms">terms</string>
+    <string name="listDescription">listIcon</string>
+    <string name="feedback">Feedback</string>
+    <string name="feedbackText">Let us know if you have an issue or an idea.</string>
+    <string name="rateAppText">Rate the App</string>
+    <string name="rateAppTexting">Let us know what you think in Google Play Store.</string>
+    <string name="shareApp">Share the App</string>
+    <string name="shareAppText">Share the app with other football lovers.</string>
+    <string name="termsText">Get the Alerts for Latest Updates</string>
+    <string name="forward">forward</string>
+
+
+    <string name="appText">%1$s%2$s %3$s</string>
+    <string name="noEvent">No Live Event available to show.</string>
+    <string name="noMatch">No Live Matches available to show.</string>
+
+
+</resources>

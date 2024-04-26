@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#009bdc</color>
+    <color name="colorPrimaryDarkW">#0166b6</color>
+    <color name="colorAccent">#009bdc</color>
+    <color name="colorPrimary">#009bdc</color>
+    <color name="textColor">#272727</color>
+    <color name="statusPrimary">#1AB9FE</color>
+    <color name="color_transparent">#00FFFFFF</color>
+    <color name="black">#FF000000</color>
+
+    <color name="mainHeaderColor">#009bdc</color>
+    <color name="gray">#A9A9A9</color>
+    <color name="mainBackground">#e1ebf0</color>
+    <color name="moreboxcolor">#ffffff</color>
+    <color name="moreHeaderText">#005db2</color>
+    <color name="moreText">#009bdc</color>
+    <color name="micClr">#005db2</color>
+
+
+</resources>
